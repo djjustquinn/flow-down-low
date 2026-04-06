@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './Partner.module.css'
+import Reveal from './Reveal'
 
 const opportunities = [
   {
@@ -48,12 +49,13 @@ export default function Partner() {
   return (
     <section id="partner" className={styles.section}>
       <div className={styles.inner}>
-        <div className={styles.label}>
-          <span className={styles.line} />
-          <span>Partner</span>
-        </div>
+        <Reveal>
+          <div className={styles.label}>
+            <span className={styles.line} />
+            <span>Partner</span>
+          </div>
 
-        <div className={styles.topRow}>
+          <div className={styles.topRow}>
           <h2 className={styles.heading}>
             Let's build this<br />
             <span className={styles.accent}>together.</span>
@@ -63,7 +65,9 @@ export default function Partner() {
             sponsors, and believers who see what this can become.
           </p>
         </div>
+        </Reveal>
 
+        <Reveal>
         <div className={styles.oppGrid}>
           {opportunities.map((o, i) => (
             <div
@@ -86,7 +90,9 @@ export default function Partner() {
             </div>
           ))}
         </div>
+        </Reveal>
 
+        <Reveal>
         <div className={styles.formWrap}>
           <div className={styles.formLabel}>Send us a message</div>
           {sent ? (
@@ -148,6 +154,7 @@ export default function Partner() {
             </form>
           )}
         </div>
+        </Reveal>
       </div>
     </section>
   )

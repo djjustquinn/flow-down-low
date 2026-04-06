@@ -1,4 +1,5 @@
 import styles from './Experience.module.css'
+import Reveal from './Reveal'
 
 const timeline = [
   { time: '00:00', label: 'Doors Open', desc: 'Arrive. Feel the space. Let the low end settle in.' },
@@ -19,30 +20,35 @@ export default function Experience() {
   return (
     <section id="experience" className={styles.section}>
       <div className={styles.inner}>
-        <div className={styles.label}>
-          <span className={styles.line} />
-          <span>The Experience</span>
-        </div>
+        <Reveal>
+          <div className={styles.label}>
+            <span className={styles.line} />
+            <span>The Experience</span>
+          </div>
 
-        <h2 className={styles.heading}>An experience unlike anything else.</h2>
+          <h2 className={styles.heading}>An experience unlike anything else.</h2>
+        </Reveal>
 
         <div className={styles.layout}>
           <div className={styles.timeline}>
             {timeline.map((t, i) => (
-              <div key={i} className={styles.step}>
-                <div className={styles.stepLeft}>
-                  <span className={styles.time}>{t.time}</span>
-                  {i < timeline.length - 1 && <span className={styles.connector} />}
+              <Reveal key={i} delay={i < 3 ? i + 1 : 3}>
+                <div className={styles.step}>
+                  <div className={styles.stepLeft}>
+                    <span className={styles.time}>{t.time}</span>
+                    {i < timeline.length - 1 && <span className={styles.connector} />}
+                  </div>
+                  <div className={styles.stepRight}>
+                    <span className={styles.stepLabel}>{t.label}</span>
+                    <p className={styles.stepDesc}>{t.desc}</p>
+                  </div>
                 </div>
-                <div className={styles.stepRight}>
-                  <span className={styles.stepLabel}>{t.label}</span>
-                  <p className={styles.stepDesc}>{t.desc}</p>
-                </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
           <div className={styles.aside}>
+            <Reveal>
             <div className={styles.card}>
               <h3 className={styles.cardTitle}>The Sound</h3>
               <p className={styles.cardBody}>
@@ -56,6 +62,8 @@ export default function Experience() {
               </div>
             </div>
 
+            </Reveal>
+            <Reveal delay={1}>
             <div className={styles.card}>
               <h3 className={styles.cardTitle}>The Practice</h3>
               <p className={styles.cardBody}>
@@ -72,6 +80,7 @@ export default function Experience() {
                 <span className={styles.statLabel}>cap — intentionally small</span>
               </div>
             </div>
+            </Reveal>
           </div>
         </div>
       </div>

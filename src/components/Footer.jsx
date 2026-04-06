@@ -32,9 +32,6 @@ export default function Footer() {
           <span className={styles.copy}>
             © {new Date().getFullYear()} Flow Down Low. A concept in motion.
           </span>
-          <span className={styles.note}>
-            Pitch deck — not yet in production
-          </span>
         </div>
       </div>
     </footer>

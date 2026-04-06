@@ -1,4 +1,5 @@
 import styles from './Venues.module.css'
+import Reveal from './Reveal'
 
 const venues = [
   {
@@ -39,24 +40,27 @@ export default function Venues() {
   return (
     <section id="venues" className={styles.section}>
       <div className={styles.inner}>
-        <div className={styles.label}>
-          <span className={styles.line} />
-          <span>The Venues</span>
-        </div>
+        <Reveal>
+          <div className={styles.label}>
+            <span className={styles.line} />
+            <span>The Venues</span>
+          </div>
 
-        <div className={styles.header}>
-          <h2 className={styles.heading}>
-            The space is<br />part of the art.
-          </h2>
-          <p className={styles.sub}>
-            Flow Down Low is nomadic by design — each event in a unique Denver location,
-            never the same space twice in a season. The venue shapes the energy.
-          </p>
-        </div>
+          <div className={styles.header}>
+            <h2 className={styles.heading}>
+              The space is<br />part of the art.
+            </h2>
+            <p className={styles.sub}>
+              Flow Down Low is nomadic by design — each event in a unique Denver location,
+              never the same space twice in a season. The venue shapes the energy.
+            </p>
+          </div>
+        </Reveal>
 
         <div className={styles.grid}>
-          {venues.map(v => (
-            <div key={v.title} className={styles.card}>
+          {venues.map((v, i) => (
+            <Reveal key={v.title} delay={i < 3 ? i + 1 : 3}>
+            <div className={styles.card}>
               <div className={styles.cardVisual}>
                 <img src={v.img} alt={v.title} className={styles.cardImg} />
                 <span className={styles.cardTag}>{v.tag}</span>
@@ -72,15 +76,18 @@ export default function Venues() {
                 </div>
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
 
+        <Reveal>
         <div className={styles.cta}>
           <p className={styles.ctaText}>
             Have a Denver space with character? We're looking for our next venue partner.
           </p>
           <a href="#partner" className={styles.ctaBtn}>Talk to Us</a>
         </div>
+        </Reveal>
       </div>
     </section>
   )
