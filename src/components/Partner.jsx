@@ -24,9 +24,25 @@ export default function Partner() {
   const [sent, setSent] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', type: '', message: '' })
 
-  const handleSubmit = (e) => {
+  const [error, setError] = useState(null)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
+    setError(null)
+    try {
+      const res = await fetch('https://formspree.io/f/xqegwrey', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setSent(true)
+      } else {
+        setError('Something went wrong. Please try again.')
+      }
+    } catch {
+      setError('Something went wrong. Please try again.')
+    }
   }
 
   return (
@@ -128,6 +144,7 @@ export default function Partner() {
                 />
               </div>
               <button type="submit" className={styles.submit}>Send It</button>
+              {error && <p className={styles.error}>{error}</p>}
             </form>
           )}
         </div>

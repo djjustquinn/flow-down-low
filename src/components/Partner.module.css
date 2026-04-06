@@ -216,3 +216,9 @@
   .oppGrid { grid-template-columns: 1fr; }
   .row { grid-template-columns: 1fr; }
 }
+
+.error {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: #e05a5a;
+}
