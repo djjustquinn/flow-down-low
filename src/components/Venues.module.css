@@ -68,6 +68,9 @@
   border-radius: 6px;
   overflow: hidden;
   transition: transform 0.3s, border-color 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -109,7 +112,14 @@
   border: 1px solid rgba(255,255,255,0.15);
 }
 
-.cardBody { padding: 1.25rem; }
+.cardBody {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardDesc { flex: 1; }
 
 .cardTitle {
   font-size: 0.92rem;
