@@ -2,3 +2,4 @@ node_modules
 dist
 .vercel
 .vite
+.claude/settings.local.json
