@@ -24,7 +24,7 @@ const venues = [
     location: 'Downtown Denver',
     desc: 'Above the noise, under the stars. Yoga at golden hour with 360-degree skyline views and bass you can feel in your chest.',
     mood: ['elevated', 'urban', 'golden-hour'],
-    img: 'https://images.pexels.com/photos/366283/pexels-photo-366283.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: 'https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=800',
   },
   {
     tag: 'Planetarium',
