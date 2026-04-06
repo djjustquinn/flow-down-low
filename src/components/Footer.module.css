@@ -30,6 +30,27 @@
   margin-top: 0.5rem;
 }
 
+.igBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  color: var(--accent2);
+  border: 1px solid var(--accent2);
+  padding: 0.4rem 0.85rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.igBtn:hover {
+  background: var(--accent2);
+  color: var(--black);
+}
+
 .nav {
   display: flex;
   gap: 2rem;
